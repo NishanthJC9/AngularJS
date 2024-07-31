@@ -1,0 +1,17 @@
+<p>home works!</p>
+<h1>Child Component</h1>
+<h1>{{name}}</h1>
+<h2>Hello welcome to home</h2>
+<button (click)="triggerEvent()">Send Data</button>
+
+<button (click)="getProd()">getProduct</button>
+
+<ul>
+    <li *ngFor="let data of product">
+        {{data.productId}}-{{data.name}}-{{data.price}}
+    </li>
+</ul>
+
+<div *ngFor="let data of product">
+    {{data.productId}}-{{data.name}}-{{data.price}}
+</div>

@@ -1,0 +1,133 @@
+<h1>Hello Welcome to the Sample App</h1>
+
+<h2>One Way Databinding</h2>
+<hr>
+<h2>Interpolation binding</h2>
+<h1>{{title}}</h1>
+<h3>{{firstName}} - {{lastName}}</h3>
+<h3>{{age}}</h3>
+<h3>{{company}}</h3>
+
+<h2>Property binding</h2>
+
+<button [disabled]="isDisable">Click me</button>
+<!-- [disabled] is mandatory -->
+
+<hr>
+<input type="text" placeholder="enter Name" [value] = "value">
+<img [src]="image" alt="image not found" srcset="">
+<hr>
+<h2>Two Way data binding</h2>
+<!-- when we make changes to the component the view gets updated and vice versa -->
+<input [(ngModel)]="twoWay">
+
+<br>
+
+<button (click)="save($event)">Save</button>
+
+<ul>
+    <li *ngFor="let val of course">
+        {{val}}
+    </li>
+</ul>
+
+<div *ngFor="let val of course">
+    {{val}}
+</div>
+
+<ul>
+   <li *ngFor="let val of arobj">
+    {{val.name}}-{{val.age}}
+   </li> 
+</ul>
+
+<div [ngSwitch]="varCase">
+    <div *ngSwitchCase="'one'">One executed</div>
+    <div *ngSwitchCase="'two'">two executed</div>
+    <div *ngSwitchCase="'three'">three executed</div>
+    <div *ngSwitchCase="'four'">four executed</div>
+    <div *ngSwitchDefault>Default executed</div>
+</div>
+
+
+<h1>*ngIf</h1>
+<!-- <div *ngIf="show; then thenblock; else elseblock ">
+    Showing information
+</div>
+
+<ng-template #thenblock>
+    Showing information
+</ng-template>
+
+<ng-template #elseblock>
+    I have no information
+</ng-template> -->
+
+<hr>
+<!-- <ng-template [ngIf]="show" [ngIfElse]="elseblock">
+    content render when it is true
+</ng-template>
+<ng-template #elseblock>
+    content render when it is false
+</ng-template> -->
+<br>
+<!-- <ng-template [ngIf]="!show" [ngIfThen]="thenblock">
+</ng-template>
+<ng-template #thenblock>
+    content render when it is false
+</ng-template>
+<br> -->
+<ng-template [ngIf]="!show" [ngIfElse]="elseblock" [ngIfThen]="thenblock">
+</ng-template>
+<ng-template #elseblock>
+    this is else block
+</ng-template>
+<ng-template #thenblock>
+    this is then block
+</ng-template>
+
+<!-- ngStyle
+ngClass -->
+
+<div [ngStyle]="{'background-color':'red', 'color':'white'}">Context</div>
+<div [ngStyle]="{'background-color': color ? 'green' : 'blue'}">Context</div>
+
+<h1 class="text-special">BESANT TECHNOLOGY</h1>
+<h1 [class]="success">BESANT TECHNOLOGY</h1>
+<h1 class="text-special" [class]="success">BESANT TECHNOLOGY</h1>
+
+<h1 [ngClass]="msg">Besant</h1>
+
+<h1>Parent Component</h1>
+<h2>{{userName}}</h2>
+<hr>
+
+<h1>{{dataFromChild}}</h1>
+<!-- <app-home [name]="userName" (childData)="handleData($event)"></app-home> -->
+<!-- [name] can be any thing and samething should be in home.component.ts -->
+
+<hr>
+
+<a routerLinkActive="active" [routerLink]="['nav']">Nav</a> <hr>
+<a routerLinkActive="active" [routerLink]="['main']">Main</a> <hr>
+<a routerLinkActive="active" [routerLink]="['footer']">Footer</a> <hr>
+<a routerLinkActive="active" [routerLink]="['child']">Child</a> <hr>
+<a routerLinkActive="active" [routerLink]="['header']">Header</a><hr>
+<a routerLinkActive="active" [routerLink]="['user','100','nishanth']">User</a><hr>
+<a routerLinkActive="active" [routerLink]="['pipes']">Pipes</a><hr>
+<a routerLinkActive="active" [routerLink]="['lifecycle']">Life Cycle</a><hr>
+
+
+<button (click)="goToHeader()">Got to header</button>
+<button (click)="goToFooter()">Got to Footer</button>
+<button (click)="goToUser()">Got to User</button>
+
+<div *ngFor="let val of response">
+    {{val.title}}
+</div>
+
+<button (click)="getpost()">Get posts</button>
+<div *ngFor="let val of post">
+    {{val.title}}
+</div>
+<router-outlet></router-outlet>

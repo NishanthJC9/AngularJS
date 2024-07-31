@@ -1,0 +1,18 @@
+.text-danger{
+    color: red;
+    background-color: yellow;
+}
+
+.text-success{
+    color: green;
+    background-color: azure;
+}
+
+.text-special{
+    font-style: italic;
+}
+
+.active{
+    color: beige;
+    background-color: blue;
+}
